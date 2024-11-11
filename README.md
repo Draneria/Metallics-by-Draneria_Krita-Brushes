@@ -1,7 +1,10 @@
 ![Metallics by Draneria: Poster. Showcases 10 brushes of faux and real metallic effects](Poster%20Minimalist.png "Metallics Brush Set Poster")
 
+### This is a set of brushes that emulate metallic effects, for Krita.
 
-### Hello there, this is my first time making brushes! If anyone tries them out, I'd absolutely love to see your art. These can definitely be improved, but I hope you enjoy! (｡•̀ᴗ-)✧
+
+
+#### Hello there, this is my first time making brushes! If anyone tries them out, I'd absolutely love to see your art. These can definitely be improved, but I hope you enjoy! (｡•̀ᴗ-)✧
 
 <br>
 
