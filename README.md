@@ -1,6 +1,6 @@
 ![Metallics by Draneria: Poster. Showcases 10 brushes of faux and real metallic effects](Poster%20Minimalist.png "Metallics Brush Set Poster")
 
-### This is a set of brushes that emulate metallic effects, for Krita.
+### This is a set of brushes that emulate metallic effects, for [Krita.](https://github.com/KDE/krita)
 
 
 
