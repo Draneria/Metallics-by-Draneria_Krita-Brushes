@@ -108,3 +108,37 @@ Thank you for reading (ﾉ◕ヮ◕)ﾉ*:・ﾟ
 ✨ https://krita-artists.org/t/metallics-by-draneria/106425
 
 <br>
+
+Extra Note: for NixOS Users, or anyone having issues getting the brushes to load:
+
+libpng may truncate iTXt Metadata, which isn't great! I think this is a problem with Krita itself, so this fix may apply if you are having problems with other brushes too. (no promises tho)
+
+SOLUTION: Recompile libpng with this patch (Thank you Shiryel 👑): 
+
+```diff
+--- a/scripts/pnglibconf.dfa
++++ b/scripts/pnglibconf.dfa
+@@ -516,8 +516,8 @@ setting USER_WIDTH_MAX default        1000000
+ setting USER_HEIGHT_MAX default       1000000
+
+ # Use 0 for unlimited
+-setting USER_CHUNK_CACHE_MAX default     1000
+-setting USER_CHUNK_MALLOC_MAX default 8000000
++setting USER_CHUNK_CACHE_MAX default  0
++setting USER_CHUNK_MALLOC_MAX default 0
+
+ # If this option is enabled APIs to set the above limits at run time are added;
+ # without this the hardwired (compile time) limits will be used.
+```
+
+Also, here is the overlay for NixOS users:
+
+```diff
+qt5 = p.qt5.overrideScope (qtf: qtp: {
+  qtbase = qtp.qtbase.override {
+    libpng = p.libpng.overrideAttrs (old: {
+      patches = [ ./libpng.patch ];
+    });
+  };
+});
+```
