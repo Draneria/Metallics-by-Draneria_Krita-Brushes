@@ -142,3 +142,14 @@ qt5 = p.qt5.overrideScope (qtf: qtp: {
   };
 });
 ```
+Alternatively, for NixOS users the issue can be fixed without rebuilding, by using 'replacedependency' (with [disclaimers](https://github.com/NixOS/nixpkgs/blob/188297c5163e6d086ce780b25ca7642d30deb96f/pkgs/build-support/replace-dependencies.nix#L9)). Thank you Oido!
+
+```diff
+patched-krita = pkgs.replaceDependency {
+  drv = pkgs.krita;
+  oldDependency = pkgs.libpng;
+  newDependency = pkgs.libpng.overrideAttrs (old: {
+    patches = old.patches or [ ] ++ [ ./libpng.patch ];
+  });
+};
+```
